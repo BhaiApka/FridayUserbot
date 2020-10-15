@@ -37,8 +37,8 @@ def get_readable_time(seconds: int) -> str:
 
 uptime = get_readable_time((time.time() - Lastupdate))
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Unknown"
-PM_IMG = "https://telegra.ph/file/22535f8051a58af113586.jpg"
-pm_caption = "➥ **FRIDAY IS:** `ONLINE`\n\n"
+PM_IMG = "https://telegra.ph/file/f1a92643e091cb9bc39cc.jpg"
+pm_caption = "➥ **SECURITY SYSTEM IS:** `ONLINE`\n\n"
 pm_caption += "➥ **SYSTEMS STATS**\n"
 pm_caption += "➥ **Telethon Version:** `1.15.0` \n"
 pm_caption += "➥ **Python:** `3.7.4` \n"
@@ -47,7 +47,7 @@ pm_caption += "➥ **Database Status:**  `Functional`\n"
 pm_caption += "➥ **Current Branch** : `master`\n"
 pm_caption += f"➥ **Version** : `{currentversion}`\n"
 pm_caption += f"➥ **My Boss** : {DEFAULTUSER} \n"
-pm_caption += "➥ **Heroku Database** : `AWS - Working Properly`\n\n"
+pm_caption += "➥ **Heroku Database** : `AWS - Working Properly`\n"
 pm_caption += "➥ **Check Stats By Doing** `.stat`."
 
 
