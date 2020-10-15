@@ -73,28 +73,13 @@ async def start(event):
            message=starttext,
            link_preview=False,
            buttons = [
-           [custom.Button.inline("Deploy your Friday 🇮🇳", data="deploy")],
-           [Button.url("Help Me ❓", "t.me/Fridayot")]
+           [Button.url("My Master", "t.me/Minecraft_ProMan")],
+           [Button.url("My Master's Channel", "t.me/AllBookPDFs")]
        ]
       )
 
 
 # Data's
-
-@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"deploy")))
-async def help(event):
-        await event.delete()
-        if event.query.user_id is not bot.uid:
-            await tgbot.send_message(
-                event.chat_id,
-                message="You Can Deploy Friday In Heroku By Following Steps Bellow, You Can See Some Quick Guides On Support Channel Or On Your Own Assistant Bot. \nThank You For Contacting Me.",
-                buttons = [
-                [Button.url("Deploy Tutorial 📺", "https://youtu.be/xfHcm_e92eQ")],
-                [Button.url("Need Help ❓", "t.me/FridaySupportOfficial")]
-                 ]
-                )
-
-
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"users")))
 async def users(event):
