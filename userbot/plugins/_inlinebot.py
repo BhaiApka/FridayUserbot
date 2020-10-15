@@ -1,102 +1,4 @@
-import re
-from math import ceil
-
-from telethon import Button
-from telethon import custom
-from telethon import events
-from telethon import functions
-from telethon.tl.functions.users import GetFullUserRequest
-import os
-from userbot import ALIVE_NAME
-from userbot import CMD_LIST
-from userbot.plugins import inlinestats
-PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
-if PMPERMIT_PIC is None:
-    WARN_PIC = "https://telegra.ph/file/53aed76a90e38779161b1.jpg"
-else:
-    WARN_PIC = PMPERMIT_PIC
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Friday"
-if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
-    @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
-    async def inline_handler(event):
-        builder = event.builder
-        result = None
-        query = event.text
-        if event.query.user_id == bot.uid and query.startswith("Friday"):
-            rev_text = query[::-1]
-            buttons = paginate_help(0, CMD_LIST, "helpme")
-            result = builder.article(
-                "© Userbot Help",
-                text="{}\nCurrently Loaded Plugins: {}".format(
-                    query, len(CMD_LIST)),
-                buttons=buttons,
-                link_preview=False,
-            )
-        if event.query.user_id == bot.uid and query == "stats":
-            result = builder.article(
-                title="Stats",
-                text=f"**Showing Stats For {DEFAULTUSER}'s Friday** \nNote --> Only Owner Can Check This \n(C) @FridayOT",
-                buttons=[
-                    [custom.Button.inline("Show Stats ", data="terminator")],
-                    [
-                        Button.url(
-                            "Repo 🇮🇳",
-                            "https://github.com/StarkGang/FridayUserbot")
-                    ],
-                    [Button.url("Join Channel ❤️", "t.me/Fridayot")],
-                ],
-            )
-        if event.query.user_id == bot.uid and query.startswith("**Hello"):
-            result = builder.article(
-                title="PM PERMIT",
-                text=query,
-                buttons=[
-                    [
-                        custom.Button.inline("❌ I Am Here For Spamming❌ ",
-                                             data="dontspamnigga")
-                    ],
-                    [
-                        custom.Button.inline(
-                            "🗣️ I Am Here For Talking With Your Master 🗣️",
-                            data="whattalk")
-                    ],
-                    [
-                        custom.Button.inline("🙏 I Am Here For Asking Something 🙏",
-                                             data="askme")
-                    ],
-                ],
-            )
-        await event.answer([result] if result else None)
-
-    @tgbot.on(
-        events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-            data=re.compile(b"helpme_next\((.+?)\)")))
-    async def on_plug_in_callback_query_handler(event):
-        if event.query.user_id == bot.uid:  # pylint:disable=E0602
-            current_page_number = int(
-                event.data_match.group(1).decode("UTF-8"))
-            buttons = paginate_help(current_page_number + 1, CMD_LIST,
-                                    "helpme")
-            # https://t.me/TelethonChat/115200
-            await event.edit(buttons=buttons)
-        else:
-            reply_popp_up_alert = "Please get your own Userbot, and don't use mine!"
-            await event.answer(reply_popp_up_alert, cache_time=0, alert=True)
-
-    @tgbot.on(
-        events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-            data=re.compile(b"helpme_prev\((.+?)\)")))
-    async def on_plug_in_callback_query_handler(event):
-        if event.query.user_id == bot.uid:  # pylint:disable=E0602
-            current_page_number = int(
-                event.data_match.group(1).decode("UTF-8"))
-            buttons = paginate_help(
-                current_page_number - 1,
-                CMD_LIST,
-                "helpme"  # pylint:disable=E0602
-            )
-            # https://t.me/TelethonChat/115200
-            await event.edit(buttons=buttons)
+ttons)
         else:
             reply_pop_up_alert = "Please get your own Userbot, and don't use mine!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
@@ -145,7 +47,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         events.callbackquery.CallbackQuery(data=re.compile(b"dontspamnigga")))
     async def rip(event):
         chat_k = await event.get_chat()
-        text1 = "You Have Chosed A Probhited Option. Therefore, You Have Been Blocked By UserBot. 🇮🇳"
+        text1 = "You Have Chose A Probhited Option. Therefore, You Have Been Blocked By UserBot. 🇮🇳"
         await event.edit("Choice Not Accepted ❌")
         await borg.send_message(event.query.user_id, text1)
         await borg(functions.contacts.BlockRequest(event.query.user_id))
@@ -168,7 +70,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
 
 
 def paginate_help(page_number, loaded_plugins, prefix):
-    number_of_rows = 8
+    number_of_rows = 6
     number_of_cols = 2
     helpable_plugins = []
     for p in loaded_plugins:
@@ -176,7 +78,7 @@ def paginate_help(page_number, loaded_plugins, prefix):
             helpable_plugins.append(p)
     helpable_plugins = sorted(helpable_plugins)
     modules = [
-        custom.Button.inline("{} {} {}".format("🔶", x, "🔶"),
+        custom.Button.inline("{} {} {}".format("🔥", x, "🌟"),
                              data="us_plugin_{}".format(x))
         for x in helpable_plugins
     ]
