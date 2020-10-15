@@ -41,8 +41,8 @@ async def _(event):
     translator = Translator()
     translated = translator.translate(text, dest=lan)
     after_tr_text = translated.text
-    output_str = (f"**Translated By Friday Assistant Bot** \n"
-                  f"Source {translated.src} \nTranslation {lan} \nWhat I Can Translate From This {after_tr_text}")
+    output_str = (f"**Translated By Apka Bhai's Assistant Bot** \n"
+                  f"Source {translated.src} \nTranslation {lan} \nI think it means 🤔 {after_tr_text} Sorry if wrong Translation")
     try:
         await tgbot.send_message(event.chat_id, output_str)
     except Exception as exc:
