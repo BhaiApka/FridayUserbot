@@ -35,7 +35,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         if event.query.user_id == bot.uid and query == "stats":
             result = builder.article(
                 title="Stats",
-                text=f"Showing Stats For {DEFAULTUSER}'s PM Protection Bot \nNote --> My Master Can Check This \n(C) @FridayOT",
+                text=f"Showing Stats For {DEFAULTUSER}'s PM Protection Bot \nNote --> My Master Can Check This \n(C) @Minecraft_ProMan 🤣🤣",
                 buttons=[
                     [custom.Button.inline("Show Stats  ", data="terminator")],
                     [
