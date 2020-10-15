@@ -35,15 +35,15 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         if event.query.user_id == bot.uid and query == "stats":
             result = builder.article(
                 title="Stats",
-                text=f"**Showing Stats For {DEFAULTUSER}'s Friday** \nNote --> Only Owner Can Check This \n(C) @FridayOT",
+                text=f"**Showing Stats For {DEFAULTUSER}'s PM Protection Bot** \nNote --> My Master Can Check This \n(C) @FridayOT",
                 buttons=[
                     [custom.Button.inline("Show Stats ", data="terminator")],
                     [
                         Button.url(
-                            "Repo 🇮🇳",
-                            "https://github.com/StarkGang/FridayUserbot")
+                            "My Master",
+                            "Https://t.me/Minecraft_ProMan")
                     ],
-                    [Button.url("Join Channel ❤️", "t.me/Fridayot")],
+                    [Button.url("Contact Him", "t.me/Minecraft_ProMan_Bot")],
                 ],
             )
         if event.query.user_id == bot.uid and query.startswith("**Hello"):
@@ -52,16 +52,16 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 text=query,
                 buttons=[
                     [
-                        custom.Button.inline("❌ I Am Here For Spamming❌ ",
+                        custom.Button.inline("❌ For Spamming ❌ ",
                                              data="dontspamnigga")
                     ],
                     [
                         custom.Button.inline(
-                            "🗣️ I Am Here For Talking With Your Master 🗣️",
+                            "🗣️ Talking With Your Master 🗣️",
                             data="whattalk")
                     ],
                     [
-                        custom.Button.inline("🙏 I Am Here For Asking Something 🙏",
+                        custom.Button.inline("For Asking Something 🙏",
                                              data="askme")
                     ],
                 ],
