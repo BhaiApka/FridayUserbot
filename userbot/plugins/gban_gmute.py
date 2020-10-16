@@ -80,7 +80,7 @@ async def gspider(userbot):
     if user:
         if user.id == 1263617196:
             return await friday.edit(
-                f"**Didn't , Your Father Teach You ? That You Cant Gban Dev**"
+                f"**You Can't Gban Dev**"
             )
         try:
             from userbot.modules.sql_helper.gmute_sql import gmute
@@ -114,7 +114,7 @@ async def gspider(userbot):
     )
 
 
-@borg.on(admin_cmd(pattern="ungban ?(.*)"))
+@borg.on(admin_on_cmd(pattern="ungban ?(.*)"))
 async def gspider(userbot):
     lol = userbot
     sender = await lol.get_sender()
